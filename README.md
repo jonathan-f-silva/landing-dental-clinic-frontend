@@ -7,6 +7,12 @@
 - [Node.js](https://nodejs.org/en/)
 - [Pnpm](https://pnpm.io)
 
+### Clonando o repositório
+
+```bash
+git clone https://github.com/jonathan-f-silva/landing-dental-clinic
+```
+
 ### Instalando dependências
 
 ```bash
