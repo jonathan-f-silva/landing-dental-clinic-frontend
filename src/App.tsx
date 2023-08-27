@@ -1,15 +1,15 @@
-import { Container } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import Header from "./components/Header";
 import MainLanding from "./components/MainLanding";
 import SignUp from "./components/SignUp";
 
 function App() {
   return (
-    <Container maxWidth={"80vw"}>
+    <Flex direction="column" alignItems="center">
       <Header />
       <MainLanding />
       <SignUp />
-    </Container>
+    </Flex>
   );
 }
 

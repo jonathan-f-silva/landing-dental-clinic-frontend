@@ -1,14 +1,18 @@
-import { HStack, Heading, Link, Stack } from "@chakra-ui/react";
+import { Link, HStack, Heading, Stack } from "@chakra-ui/react";
 
 function Header() {
   return (
     <Stack
       as="header"
       justifyContent={"space-between"}
-      direction={{ base: "column", md: "row" }}
+      direction={{ base: "column", sm: "row" }}
+      padding={4}
+      backgroundColor="teal.500"
+      color="white"
+      width="100%"
     >
-      <Heading>Clínica Dental</Heading>
-      <HStack as="nav">
+      <Heading>Clínica Odontológica</Heading>
+      <HStack as="nav" spacing={4}>
         <Link href="#">Contato</Link>
         <Link href="#">Cadastre-se</Link>
       </HStack>
