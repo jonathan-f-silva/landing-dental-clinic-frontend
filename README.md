@@ -1,4 +1,4 @@
-# Template para Clínica Dental
+# Template para Clínica Dental - Frontend
 
 ## Rodando o projeto para desenvolvimento
 
@@ -10,7 +10,7 @@
 ### Clonando o repositório
 
 ```bash
-git clone https://github.com/jonathan-f-silva/landing-dental-clinic
+git clone https://github.com/jonathan-f-silva/landing-dental-clinic-frontend.git
 ```
 
 ### Instalando dependências
