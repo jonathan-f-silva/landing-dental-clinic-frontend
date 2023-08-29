@@ -1,5 +1,6 @@
 import {
   Button,
+  Checkbox,
   FormControl,
   FormLabel,
   Heading,
@@ -15,6 +16,7 @@ type FormData = {
   email: string;
   phone: string;
   message: string;
+  prefersWhatsapp?: boolean;
 };
 
 function Contact() {
@@ -32,7 +34,6 @@ function Contact() {
   return (
     <Card
       as="form"
-      margin={4}
       maxWidth="60ch"
       rounded={10}
       width="90%"
@@ -75,6 +76,11 @@ function Contact() {
               placeholder="Mensagem"
               {...register("message", { required: true })}
             />
+          </FormControl>
+          <FormControl>
+            <Checkbox {...register("prefersWhatsapp", { required: false })}>
+              Prefere contato por WhatsApp?
+            </Checkbox>
           </FormControl>
         </Stack>
       </CardBody>
