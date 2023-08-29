@@ -6,13 +6,11 @@ function MainLanding() {
     <Stack
       as="main"
       direction={{ base: "column", md: "row" }}
-      margin={4}
       alignItems="center"
       justifyContent="space-around"
       maxWidth="container.lg"
     >
-      {/* TODO: Change Placeholder image */}
-      <Image src={dentistImage} rounded={10} />
+      <Image src={dentistImage} rounded={10} margin={4} />
       <VStack>
         <Text padding={10}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -20,7 +18,7 @@ function MainLanding() {
         </Text>
         <Stack direction={{ base: "column", lg: "row" }}>
           <Button>Entre em contato</Button>
-          <Button>Agende sua consulta</Button>
+          <Button>Onde estamos</Button>
         </Stack>
       </VStack>
     </Stack>

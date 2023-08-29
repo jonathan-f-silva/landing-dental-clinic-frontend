@@ -14,7 +14,7 @@ function Header() {
       <Heading>Clínica Odontológica</Heading>
       <HStack as="nav" spacing={4}>
         <Link href="#">Contato</Link>
-        <Link href="#">Cadastre-se</Link>
+        <Link href="#">Localização</Link>
       </HStack>
     </Stack>
   );

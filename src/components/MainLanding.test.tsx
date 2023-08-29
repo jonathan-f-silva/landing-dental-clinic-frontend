@@ -7,6 +7,6 @@ test("renders main landing component", () => {
   expect(imageElement).toBeInTheDocument();
   const contactButton = screen.getByText("Entre em contato");
   expect(contactButton).toBeInTheDocument();
-  const scheduleButton = screen.getByText("Agende sua consulta");
+  const scheduleButton = screen.getByText("Onde estamos");
   expect(scheduleButton).toBeInTheDocument();
 });
