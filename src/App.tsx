@@ -4,6 +4,7 @@ import MainLanding from "./components/MainLanding";
 import Contact from "./components/Contact";
 import Location from "./components/Location";
 import theme from "./theme/index.tsx";
+import Footer from "./components/Footer.tsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <MainLanding />
         <Contact />
         <Location />
+        <Footer />
       </VStack>
     </ChakraProvider>
   );
