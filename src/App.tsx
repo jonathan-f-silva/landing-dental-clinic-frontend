@@ -1,14 +1,14 @@
 import { Flex } from "@chakra-ui/react";
 import Header from "./components/Header";
 import MainLanding from "./components/MainLanding";
-import SignUp from "./components/SignUp";
+import Contact from "./components/Contact";
 
 function App() {
   return (
     <Flex direction="column" alignItems="center">
       <Header />
       <MainLanding />
-      <SignUp />
+      <Contact />
     </Flex>
   );
 }
