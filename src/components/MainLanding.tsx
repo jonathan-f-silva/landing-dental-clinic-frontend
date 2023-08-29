@@ -1,4 +1,4 @@
-import { Button, Image, Stack, Text, VStack } from "@chakra-ui/react";
+import { Link, Image, Stack, Text, VStack, Button } from "@chakra-ui/react";
 import dentistImage from "../assets/dentist-sample.png";
 
 function MainLanding() {
@@ -17,8 +17,12 @@ function MainLanding() {
           eiusmod tempor incididunt ut labore..
         </Text>
         <Stack direction={{ base: "column", lg: "row" }}>
-          <Button>Entre em contato</Button>
-          <Button>Onde estamos</Button>
+          <Link href="#contact">
+            <Button>Entre em contato</Button>
+          </Link>
+          <Link href="#location">
+            <Button>Onde estamos</Button>
+          </Link>
         </Stack>
       </VStack>
     </Stack>

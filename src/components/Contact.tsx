@@ -40,7 +40,7 @@ function Contact() {
       onSubmit={handleSubmit(onSubmit)}
     >
       <CardHeader>
-        <Heading color="teal" as={"h3"} size="lg">
+        <Heading id="contact" color="teal" as={"h3"} size="lg">
           Entre em contato!
         </Heading>
       </CardHeader>

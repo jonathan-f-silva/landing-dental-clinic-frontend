@@ -9,9 +9,9 @@ import {
 
 function Location() {
   return (
-    <Card>
+    <Card maxWidth="60ch" width="90%">
       <CardHeader>
-        <Heading color="teal" as={"h3"} size="lg">
+        <Heading id="location" color="teal" as={"h3"} size="lg">
           Localização
         </Heading>
       </CardHeader>
