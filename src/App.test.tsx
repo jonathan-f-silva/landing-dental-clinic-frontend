@@ -7,4 +7,5 @@ test("renders main application components", () => {
   screen.getByText(/Onde estamos/i);
   screen.getByText(/Entre em contato!/i);
   screen.getByText(/Rua 15 de Novembro, 1234/i);
+  screen.getByText(/vai de digital/i);
 });
