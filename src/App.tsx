@@ -15,13 +15,14 @@ const config = {
   introText:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore..",
   addSectionButtons: true,
+  headerTitle: "Clínica Odontológica",
 };
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
       <VStack direction="column" alignItems="center" spacing={4}>
-        <Header />
+        <Header title={config.headerTitle} />
         <MainLanding
           bannerImageURL={config.bannerImageURL}
           introText={config.introText}
