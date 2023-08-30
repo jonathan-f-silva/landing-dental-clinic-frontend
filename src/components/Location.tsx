@@ -8,10 +8,11 @@ import {
 } from "@chakra-ui/react";
 
 type LocationProps = {
-  googleMapsUrl: string;
+  url: string;
+  description: string;
 };
 
-function Location({ googleMapsUrl }: LocationProps) {
+function Location({ url, description }: LocationProps) {
   return (
     <Card maxWidth="60ch" width="90%">
       <CardHeader>
@@ -23,17 +24,11 @@ function Location({ googleMapsUrl }: LocationProps) {
         <Stack direction={{ base: "column", md: "row" }}>
           <iframe
             title="Localização da clínica no mapa"
-            src={googleMapsUrl}
+            src={url}
             loading="lazy"
             width="100%"
           ></iframe>
-          <Text>
-            Rua 15 de Novembro, 1234
-            <br />
-            Centro
-            <br />
-            Iacanga/SP
-          </Text>
+          <Text>{description}</Text>
         </Stack>
       </CardBody>
     </Card>
