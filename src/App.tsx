@@ -6,6 +6,10 @@ import Location from "./components/Location";
 import theme from "./theme/index.tsx";
 import Footer from "./components/Footer.tsx";
 
+const config = {
+  footerText: "© 2023 Vai De Digital! Todos os direitos reservados",
+};
+
 function App() {
   return (
     <ChakraProvider theme={theme}>
@@ -14,7 +18,7 @@ function App() {
         <MainLanding />
         <Contact />
         <Location />
-        <Footer />
+        <Footer text={config.footerText} />
       </VStack>
     </ChakraProvider>
   );
