@@ -24,3 +24,9 @@ pnpm install
 ```bash
 pnpm dev
 ```
+
+### Rodando testes unitários
+
+```bash
+pnpm test
+```

@@ -1,10 +1,12 @@
 import {
   Button,
+  Checkbox,
   FormControl,
   FormLabel,
   Heading,
   Input,
   Stack,
+  Textarea,
 } from "@chakra-ui/react";
 import { Card, CardBody, CardFooter, CardHeader } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
@@ -12,9 +14,12 @@ import { useForm } from "react-hook-form";
 type FormData = {
   name: string;
   email: string;
+  phone: string;
+  message: string;
+  prefersWhatsapp?: boolean;
 };
 
-function SignUp() {
+function Contact() {
   const { register, handleSubmit, formState } = useForm<FormData>({
     mode: "onChange",
   });
@@ -29,15 +34,14 @@ function SignUp() {
   return (
     <Card
       as="form"
-      margin={4}
       maxWidth="60ch"
       rounded={10}
       width="90%"
       onSubmit={handleSubmit(onSubmit)}
     >
       <CardHeader>
-        <Heading color="teal" as={"h3"} size="lg">
-          Cadastre-se
+        <Heading id="contact" color="teal" as={"h3"} size="lg">
+          Entre em contato!
         </Heading>
       </CardHeader>
       <CardBody>
@@ -58,15 +62,35 @@ function SignUp() {
               {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             />
           </FormControl>
+          <FormControl>
+            <FormLabel>Telefone</FormLabel>
+            <Input
+              type="tel"
+              placeholder="Telefone"
+              {...register("phone", { required: true })}
+            />
+          </FormControl>
+          <FormControl>
+            <FormLabel>Mensagem</FormLabel>
+            <Textarea
+              placeholder="Mensagem"
+              {...register("message", { required: true })}
+            />
+          </FormControl>
+          <FormControl>
+            <Checkbox {...register("prefersWhatsapp", { required: false })}>
+              Prefere contato por WhatsApp?
+            </Checkbox>
+          </FormControl>
         </Stack>
       </CardBody>
       <CardFooter>
         <Button isDisabled={isSubmitDisabled} type="submit" colorScheme="teal">
-          Cadastrar
+          Enviar
         </Button>
       </CardFooter>
     </Card>
   );
 }
 
-export default SignUp;
+export default Contact;
