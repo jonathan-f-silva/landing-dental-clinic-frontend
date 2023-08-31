@@ -16,7 +16,7 @@ export type Config = {
   };
   header: {
     title: string;
-    additionalLinks: {
+    additionalLinks?: {
       href: string;
       description: string;
     }[];
