@@ -1,6 +1,7 @@
 import { Link, HStack, Heading, Stack } from "@chakra-ui/react";
+import { Config } from "../contexts/configReducer";
 
-function Header() {
+function Header({ title, additionalLinks }: Config["header"]) {
   return (
     <Stack
       as="header"
@@ -11,10 +12,19 @@ function Header() {
       color="white"
       width="100%"
     >
-      <Heading>Clínica Odontológica</Heading>
+      <Heading>{title}</Heading>
       <HStack as="nav" spacing={4}>
-        <Link href="#contact">Contato</Link>
-        <Link href="#location">Localização</Link>
+        <Link key="#contact" href="#contact">
+          Contato
+        </Link>
+        <Link key="#location" href="#location">
+          Localização
+        </Link>
+        {additionalLinks?.map((link) => (
+          <Link key={link.href} href={link.href}>
+            {link.description}
+          </Link>
+        ))}
       </HStack>
     </Stack>
   );
