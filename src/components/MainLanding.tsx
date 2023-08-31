@@ -1,16 +1,11 @@
 import { Link, Image, Stack, Text, VStack, Button } from "@chakra-ui/react";
-
-type MainLandingProps = {
-  bannerImageURL: string;
-  introText: string;
-  addSectionButtons: boolean;
-};
+import { Config } from "../contexts/configReducer";
 
 function MainLanding({
   bannerImageURL,
   introText,
   addSectionButtons,
-}: MainLandingProps) {
+}: Config["mainLanding"]) {
   return (
     <Stack
       as="main"

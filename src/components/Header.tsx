@@ -1,16 +1,7 @@
 import { Link, HStack, Heading, Stack } from "@chakra-ui/react";
+import { Config } from "../contexts/configReducer";
 
-type LinkData = {
-  href: string;
-  description: string;
-};
-
-type HeaderProps = {
-  title: string;
-  additionalLinks?: LinkData[];
-};
-
-function Header({ title, additionalLinks }: HeaderProps) {
+function Header({ title, additionalLinks }: Config["header"]) {
   return (
     <Stack
       as="header"

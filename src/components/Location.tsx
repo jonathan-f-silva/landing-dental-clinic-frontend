@@ -6,13 +6,9 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
+import { Config } from "../contexts/configReducer";
 
-type LocationProps = {
-  url: string;
-  description: string;
-};
-
-function Location({ url, description }: LocationProps) {
+function Location({ url, description }: Config["location"]) {
   return (
     <Card maxWidth="60ch" width="90%">
       <CardHeader>
