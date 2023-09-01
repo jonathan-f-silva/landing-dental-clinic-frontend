@@ -16,7 +16,7 @@ export type Config = {
   };
   header: {
     title: string;
-    additionalLinks?: {
+    links?: {
       href: string;
       description: string;
     }[];
@@ -44,7 +44,16 @@ export const initialConfig: Config = {
   },
   header: {
     title: "Clínica Odontológica",
-    additionalLinks: [],
+    links: [
+      {
+        href: "#contact",
+        description: "Contato",
+      },
+      {
+        href: "#location",
+        description: "Localização",
+      },
+    ],
   },
 };
 
