@@ -1,5 +1,4 @@
-import { useContext } from "react";
-import { ConfigContext } from "../contexts/ConfigContext.tsx";
+import { useConfig } from "../contexts/ConfigContext.tsx";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer.tsx";
 import Header from "../components/Header";
@@ -7,7 +6,7 @@ import Location from "../components/Location";
 import MainLanding from "../components/MainLanding";
 
 function Home() {
-  const config = useContext(ConfigContext);
+  const config = useConfig();
   return (
     <>
       <Header {...config.header} />
