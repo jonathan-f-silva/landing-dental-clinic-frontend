@@ -1,11 +1,11 @@
 import {
   Button,
-  Checkbox,
   FormControl,
   FormLabel,
   Heading,
   Input,
   Stack,
+  Switch,
   Textarea,
 } from "@chakra-ui/react";
 import { Card, CardBody, CardFooter, CardHeader } from "@chakra-ui/react";
@@ -77,10 +77,14 @@ function Contact() {
               {...register("message", { required: true })}
             />
           </FormControl>
-          <FormControl>
-            <Checkbox {...register("prefersWhatsapp", { required: false })}>
+          <FormControl display="flex" alignItems="center">
+            <FormLabel htmlFor="prefers-whatsapp" mb="0">
               Prefere contato por WhatsApp?
-            </Checkbox>
+            </FormLabel>
+            <Switch
+              {...register("prefersWhatsapp", { required: false })}
+              id="prefers-whatsapp"
+            />
           </FormControl>
         </Stack>
       </CardBody>
