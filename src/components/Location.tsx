@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { Config } from "../contexts/configReducer";
 
-function Location({ url, description }: Config["location"]) {
+function Location({ href, description }: Config["location"]) {
   return (
     <Card maxWidth="60ch" width="90%">
       <CardHeader>
@@ -20,7 +20,7 @@ function Location({ url, description }: Config["location"]) {
         <Stack direction={{ base: "column", md: "row" }}>
           <iframe
             title="Localização da clínica no mapa"
-            src={url}
+            src={href}
             loading="lazy"
             width="100%"
           ></iframe>
