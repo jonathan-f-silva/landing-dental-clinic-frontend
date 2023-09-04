@@ -1,9 +1,9 @@
 import { useConfig } from "../contexts/ConfigContext.tsx";
-import Contact from "../components/Contact";
+import Contact from "../components/Contact.tsx";
 import Footer from "../components/Footer.tsx";
-import Header from "../components/Header";
-import Location from "../components/Location";
-import MainLanding from "../components/MainLanding";
+import Header from "../components/Header.tsx";
+import Location from "../components/Location.tsx";
+import MainLanding from "../components/MainLanding.tsx";
 
 function Home() {
   const config = useConfig();
