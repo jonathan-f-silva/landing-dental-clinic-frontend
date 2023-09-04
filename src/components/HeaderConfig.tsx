@@ -7,8 +7,11 @@ import {
   Heading,
   Input,
 } from "@chakra-ui/react";
+import LinkInfoTable from "./LinkInfoTable";
+import { useConfig } from "../contexts/ConfigContext";
 
 function HeaderConfig() {
+  const { header } = useConfig();
   return (
     <Card>
       <CardHeader>
@@ -19,6 +22,7 @@ function HeaderConfig() {
           <FormLabel>Título</FormLabel>
           <Input placeholder="Título do cabeçalho" />
         </FormControl>
+        <LinkInfoTable links={header.links} />
       </CardBody>
     </Card>
   );
