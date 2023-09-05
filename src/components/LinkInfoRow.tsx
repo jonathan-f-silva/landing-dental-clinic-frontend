@@ -2,7 +2,12 @@ import { Icon, IconButton, Td, Tr } from "@chakra-ui/react";
 import { IoTrashBin } from "react-icons/io5";
 import { LinkInfo } from "../contexts/configReducer";
 
-function LinkInfoRow({ link }: { link: LinkInfo }) {
+type LinkInfoRowProps = {
+  link: LinkInfo;
+  handleRemoveLink: (href: string) => void;
+};
+
+function LinkInfoRow({ link, handleRemoveLink }: LinkInfoRowProps) {
   return (
     <Tr>
       <Td>{link.description}</Td>
@@ -12,6 +17,7 @@ function LinkInfoRow({ link }: { link: LinkInfo }) {
           colorScheme="red"
           aria-label={`Remover link ${link.description}`}
           icon={<Icon as={IoTrashBin} />}
+          onClick={() => handleRemoveLink(link.href)}
         />
       </Td>
     </Tr>
