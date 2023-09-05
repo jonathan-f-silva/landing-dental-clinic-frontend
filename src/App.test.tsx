@@ -11,7 +11,7 @@ test("renders main application components", () => {
 
 test("renders dashboard components", () => {
   renderWithRouter(["/dashboard"]);
-  screen.getByText(/Dashboard/i);
+  screen.getByRole("heading", { name: /dashboard/i });
   screen.getByText(/Introdução/i);
   screen.getByText(/Banner/i);
   screen.getByText(/Adicionar botões para as seções/i);

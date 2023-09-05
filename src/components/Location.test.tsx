@@ -4,7 +4,7 @@ import Location from "./Location";
 test("renders location map and address details", () => {
   render(
     <Location
-      url="http://someurl.com"
+      href="http://someurl.com"
       description="alguma descrição de teste"
     />,
   );
