@@ -22,14 +22,12 @@ function MainLandingConfig() {
           <Textarea placeholder="Texto de introdução" />
         </FormControl>
         <FormControl>
-          <FormLabel htmlFor="input-main-landing-banner">Banner</FormLabel>
-          <Input id="input-main-landing-banner" type="file" name="banner" />
+          <FormLabel>Banner</FormLabel>
+          <Input type="file" name="banner" />
         </FormControl>
         <FormControl display="flex" alignItems="center">
-          <FormLabel htmlFor="input-main-landing-add-extra-buttons" mb="0">
-            Adicionar botões para as seções
-          </FormLabel>
-          <Switch id="input-main-landing-add-extra-buttons" />
+          <FormLabel mb="0">Adicionar botões para as seções</FormLabel>
+          <Switch />
         </FormControl>
         <FormControl></FormControl>
       </CardBody>

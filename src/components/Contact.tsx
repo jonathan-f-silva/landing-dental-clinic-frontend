@@ -78,13 +78,8 @@ function Contact() {
             />
           </FormControl>
           <FormControl display="flex" alignItems="center">
-            <FormLabel htmlFor="prefers-whatsapp" mb="0">
-              Prefere contato por WhatsApp?
-            </FormLabel>
-            <Switch
-              {...register("prefersWhatsapp", { required: false })}
-              id="prefers-whatsapp"
-            />
+            <FormLabel mb="0">Prefere contato por WhatsApp?</FormLabel>
+            <Switch {...register("prefersWhatsapp", { required: false })} />
           </FormControl>
         </Stack>
       </CardBody>
