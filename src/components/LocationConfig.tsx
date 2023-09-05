@@ -7,8 +7,12 @@ import {
   Heading,
   Textarea,
 } from "@chakra-ui/react";
+import { useConfig, useConfigDispatch } from "../contexts/ConfigContext";
+import MapEmbed from "./MapEmbed";
 
 function LocationConfig() {
+  const { location } = useConfig();
+  const dispatch = useConfigDispatch();
   return (
     <Card>
       <CardHeader>
@@ -17,7 +21,16 @@ function LocationConfig() {
       <CardBody>
         <FormControl>
           <FormLabel>Embed do Google Maps</FormLabel>
-          <Textarea placeholder="Embed do Google Maps" />
+          <Textarea
+            placeholder="Embed do Google Maps"
+            onChange={(ev) =>
+              dispatch({
+                type: "setLocation",
+                payload: { href: ev.target.value },
+              })
+            }
+          />
+          <MapEmbed src={location.href} />
         </FormControl>
         <FormControl>
           <FormLabel>Descrição</FormLabel>
