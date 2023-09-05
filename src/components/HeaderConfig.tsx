@@ -1,28 +1,16 @@
-import {
-  Card,
-  CardBody,
-  CardHeader,
-  FormControl,
-  FormLabel,
-  Heading,
-  Input,
-} from "@chakra-ui/react";
+import { Card, CardBody, CardHeader, Heading } from "@chakra-ui/react";
 import LinkInfoTable from "./LinkInfoTable";
-import { useConfig } from "../contexts/ConfigContext";
+import HeaderTextEdit from "./HeaderTextEdit";
 
 function HeaderConfig() {
-  const { header } = useConfig();
   return (
     <Card>
       <CardHeader>
         <Heading>Cabeçalho</Heading>
       </CardHeader>
       <CardBody>
-        <FormControl>
-          <FormLabel>Título</FormLabel>
-          <Input placeholder="Título do cabeçalho" />
-        </FormControl>
-        <LinkInfoTable links={header.links} />
+        <HeaderTextEdit />
+        <LinkInfoTable />
       </CardBody>
     </Card>
   );
