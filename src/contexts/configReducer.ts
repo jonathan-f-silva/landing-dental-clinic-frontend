@@ -10,21 +10,53 @@ export type Config = {
   footer: {
     text: string;
   };
+  header: {
+    title: string;
+    links: LinkInfo[];
+  };
   location: LinkInfo;
   mainLanding: {
     bannerImageURL: string;
     introText: string;
     addSectionButtons: boolean;
   };
-  header: {
-    title: string;
-    links?: LinkInfo[];
-  };
 };
 
-export type Action = {
-  payload: Partial<Config>;
-  type: "UPDATE_CONFIG";
+// source: https://dev.to/mpriour/generating-strongly-typed-reducer-actions-for-react-j77
+type Setters<T> = {
+  [K in keyof T as `set${Capitalize<string & K>}`]: T[K];
+};
+
+type ConfigSetters = Setters<Config>;
+
+type ActionsMap = {
+  [S in keyof ConfigSetters]: {
+    type: S,
+    payload: Partial<ConfigSetters[S]>
+  }
+}
+
+export type ConfigAction = ActionsMap[keyof ActionsMap] | {type: 'other'}
+
+
+export function configReducer(config: Config, action: ConfigAction): Config {
+  switch (action.type) {
+    case "setFooter": {
+      return {...config, footer: {...config.footer, ...action.payload}};
+    }
+    case "setLocation": {
+      return { ...config, location: { ...config.location, ...action.payload } };
+    }
+    case "setMainLanding": {
+      return { ...config, mainLanding: { ...config.mainLanding, ...action.payload } };
+    }
+    case "setHeader": {
+      return { ...config, header: { ...config.header, ...action.payload } };
+    }
+    default: {
+      throw Error("Unknown action: " + action.type);
+    }
+  }
 }
 
 export const initialConfig: Config = {
@@ -52,20 +84,14 @@ export const initialConfig: Config = {
         href: "#location",
         description: "Localização",
       },
+      {
+        href: "/dashboard",
+        description: "Dashboard",
+      },
+      {
+        href: "/",
+        description: "Home",
+      }
     ],
   },
 };
-
-export function configReducer(config: Config, action: Action): Config {
-  switch (action.type) {
-    case "UPDATE_CONFIG": {
-      return {
-        ...config,
-        ...action.payload,
-      };
-    }
-    default: {
-      throw Error("Unknown action: " + action.type);
-    }
-  }
-}

@@ -1,9 +1,11 @@
 import { Dispatch, createContext, useContext } from "react";
-import { Action, Config, initialConfig } from "./configReducer";
+import { Config, ConfigAction, initialConfig } from "./configReducer";
 
 export const ConfigContext = createContext<Config>(initialConfig);
 
-export const ConfigDispatchContext = createContext<Dispatch<Action>>(() => {});
+export const ConfigDispatchContext = createContext<Dispatch<ConfigAction>>(
+  () => {},
+);
 
 export const useConfig = () => useContext(ConfigContext);
 
