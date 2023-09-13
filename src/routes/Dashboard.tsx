@@ -11,7 +11,7 @@ function Dashboard() {
   const config = useConfig();
   return (
     <>
-      <Header title="Dashboard" links={...config.header.links} />
+      <Header title="Dashboard" links={config.header.links} />
       <VStack spacing={4} maxWidth="60ch" width="90%" alignItems="stretch">
         <HeaderConfig />
         <MainLandingConfig />
