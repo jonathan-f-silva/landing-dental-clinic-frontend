@@ -9,8 +9,8 @@ function Header({ title, links }: Config["header"]) {
       justifyContent={"space-between"}
       direction={{ base: "column", sm: "row" }}
       padding={4}
-      backgroundColor="teal.500"
-      color="white"
+      backgroundColor="brand.600"
+      color="brand.50"
       width="100%"
     >
       <Heading>{title}</Heading>

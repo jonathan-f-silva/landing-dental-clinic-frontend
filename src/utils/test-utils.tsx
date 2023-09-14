@@ -7,8 +7,7 @@ import {
   createMemoryRouter,
 } from "react-router-dom";
 import { ConfigProvider } from "../contexts/ConfigProvider";
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "../theme";
+import AppThemeProvider from "../theme/AppThemeProvider";
 import appRoutes from "../routes";
 
 afterEach(() => {
@@ -18,7 +17,7 @@ afterEach(() => {
 const AllTheProviders = ({ children }: { children: React.ReactNode }) => {
   return (
     <ConfigProvider>
-      <ChakraProvider theme={theme}>{children}</ChakraProvider>
+      <AppThemeProvider>{children}</AppThemeProvider>
     </ConfigProvider>
   );
 };

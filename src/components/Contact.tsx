@@ -40,7 +40,7 @@ function Contact() {
       onSubmit={handleSubmit(onSubmit)}
     >
       <CardHeader>
-        <Heading id="contact" color="teal" as={"h3"} size="lg">
+        <Heading id="contact" as={"h3"} size="lg">
           Entre em contato!
         </Heading>
       </CardHeader>
@@ -84,7 +84,7 @@ function Contact() {
         </Stack>
       </CardBody>
       <CardFooter>
-        <Button isDisabled={isSubmitDisabled} type="submit" colorScheme="teal">
+        <Button isDisabled={isSubmitDisabled} type="submit">
           Enviar
         </Button>
       </CardFooter>
