@@ -1,9 +1,9 @@
 import { useReducer } from "react";
-import { configReducer, initialConfig } from "./configReducer";
+import { configReducer, emptyConfig } from "./configReducer";
 import { ConfigContext, ConfigDispatchContext } from "./ConfigContext";
 
 export function ConfigProvider({ children }: { children: React.ReactNode }) {
-  const [config, dispatch] = useReducer(configReducer, initialConfig);
+  const [config, dispatch] = useReducer(configReducer, emptyConfig);
 
   return (
     <ConfigContext.Provider value={config}>

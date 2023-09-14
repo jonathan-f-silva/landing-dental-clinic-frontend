@@ -70,7 +70,7 @@ export function configReducer(config: Config, action: ConfigAction): Config {
 export async function getConfig() {
   let config = await localforage.getItem<Config>("config");
   console.log("getConfig", config);
-  if (!config) config = initialConfig;
+  if (!config) config = sampleConfig;
   return config;
 }
 
@@ -78,7 +78,26 @@ export async function saveConfig(config: Config) {
   return localforage.setItem("config", config);
 }
 
-export const initialConfig: Config = {
+export const emptyConfig: Config = {
+  footer: {
+    text: "",
+  },
+  location: {
+    href: "",
+    description: "",
+  },
+  mainLanding: {
+    bannerImageURL: "",
+    introText: "",
+    addSectionButtons: false,
+  },
+  header: {
+    title: "",
+    links: [],
+  },
+};
+
+const sampleConfig: Config = {
   footer: {
     text: "© 2023 Vai De Digital! Todos os direitos reservados.",
   },
