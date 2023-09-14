@@ -39,7 +39,6 @@ function MainLandingConfig() {
           <FormLabel>Banner</FormLabel>
           <Input
             type="file"
-            name="banner"
             onChange={(ev) => {
               if (!ev.target.files) return;
               const file = ev.target.files[0];

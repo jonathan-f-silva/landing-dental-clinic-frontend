@@ -1,12 +1,13 @@
 import { RouteObject } from "react-router-dom";
 import Home from "./Home.tsx";
-import Dashboard from "./Dashboard.tsx";
-import App from "../App.tsx";
+import Dashboard, { action as dashboardAction } from "./Dashboard.tsx";
+import App, { loader as appLoader } from "../App.tsx";
 
 const appRoutes: RouteObject[] = [
   {
     path: "/",
     element: <App />,
+    loader: appLoader,
     children: [
       {
         index: true,
@@ -15,6 +16,7 @@ const appRoutes: RouteObject[] = [
       {
         path: "dashboard",
         element: <Dashboard />,
+        action: dashboardAction,
       },
     ],
   },

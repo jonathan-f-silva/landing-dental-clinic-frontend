@@ -1,3 +1,4 @@
+import localforage from "localforage";
 import dentistImage from "../assets/dentist-sample.png";
 
 export type LinkInfo = {
@@ -35,7 +36,10 @@ type ActionsMap = {
   };
 };
 
-export type ConfigAction = ActionsMap[keyof ActionsMap] | { type: "other" };
+export type ConfigAction =
+  | ActionsMap[keyof ActionsMap]
+  | { type: "setConfig"; payload: Partial<Config> }
+  | { type: "other" };
 
 export function configReducer(config: Config, action: ConfigAction): Config {
   switch (action.type) {
@@ -54,10 +58,24 @@ export function configReducer(config: Config, action: ConfigAction): Config {
     case "setHeader": {
       return { ...config, header: { ...config.header, ...action.payload } };
     }
+    case "setConfig": {
+      return { ...config, ...action.payload };
+    }
     default: {
       throw Error("Unknown action: " + action.type);
     }
   }
+}
+
+export async function getConfig() {
+  let config = await localforage.getItem<Config>("config");
+  console.log("getConfig", config);
+  if (!config) config = initialConfig;
+  return config;
+}
+
+export async function saveConfig(config: Config) {
+  return localforage.setItem("config", config);
 }
 
 export const initialConfig: Config = {
