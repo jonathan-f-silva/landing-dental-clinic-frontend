@@ -8,6 +8,7 @@ import MainLandingConfig from "../components/MainLandingConfig";
 import { useConfig } from "../contexts/ConfigContext";
 import { saveConfig } from "../contexts/configReducer";
 import { Form } from "react-router-dom";
+import ThemeConfig from "../components/ThemeConfig";
 
 export async function action({ request }: { request: Request }) {
   const formData = await request.formData();
@@ -28,6 +29,7 @@ function Dashboard() {
         width="90%"
         alignItems="stretch"
       >
+        <ThemeConfig />
         <HeaderConfig />
         <MainLandingConfig />
         <LocationConfig />

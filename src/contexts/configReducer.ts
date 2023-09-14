@@ -8,6 +8,18 @@ export type LinkInfo = {
 };
 
 export type ThemeColor = keyof typeof baseTheme.colors;
+export const availableColors: ThemeColor[] = [
+  "pink",
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "teal",
+  "cyan",
+  "blue",
+  "purple",
+  "gray",
+];
 
 export type Config = {
   footer: {
