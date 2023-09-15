@@ -14,7 +14,12 @@ function MainLanding({
       justifyContent="space-around"
       maxWidth="container.lg"
     >
-      <Image src={bannerImageURL} rounded={10} margin={4} />
+      <Image
+        src={bannerImageURL}
+        rounded={10}
+        margin={4}
+        alt="Banner principal"
+      />
       <VStack>
         <Text padding={10}>{introText}</Text>
         {addSectionButtons && (

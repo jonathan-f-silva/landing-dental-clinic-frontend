@@ -1,17 +1,12 @@
-import { Dispatch, createContext, useReducer } from "react";
-import { Action, Config, configReducer, initialConfig } from "./configReducer";
+import { Dispatch, createContext, useContext } from "react";
+import { Config, ConfigAction, emptyConfig } from "./configReducer";
 
-export const ConfigContext = createContext<Config>(initialConfig);
-export const ConfigDispatchContext = createContext<Dispatch<Action>>(() => {});
+export const ConfigContext = createContext<Config>(emptyConfig);
 
-export function ConfigProvider({ children }: { children: React.ReactNode }) {
-  const [config, dispatch] = useReducer(configReducer, initialConfig);
+export const ConfigDispatchContext = createContext<Dispatch<ConfigAction>>(
+  () => {},
+);
 
-  return (
-    <ConfigContext.Provider value={config}>
-      <ConfigDispatchContext.Provider value={dispatch}>
-        {children}
-      </ConfigDispatchContext.Provider>
-    </ConfigContext.Provider>
-  );
-}
+export const useConfig = () => useContext(ConfigContext);
+
+export const useConfigDispatch = () => useContext(ConfigDispatchContext);

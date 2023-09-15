@@ -7,8 +7,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Config } from "../contexts/configReducer";
+import MapEmbed from "./MapEmbed";
 
-function Location({ url, description }: Config["location"]) {
+function Location({ href, description }: Config["location"]) {
   return (
     <Card maxWidth="60ch" width="90%">
       <CardHeader>
@@ -18,12 +19,7 @@ function Location({ url, description }: Config["location"]) {
       </CardHeader>
       <CardBody>
         <Stack direction={{ base: "column", md: "row" }}>
-          <iframe
-            title="Localização da clínica no mapa"
-            src={url}
-            loading="lazy"
-            width="100%"
-          ></iframe>
+          <MapEmbed title="Localização da clínica no mapa" src={href} />
           <Text>{description}</Text>
         </Stack>
       </CardBody>

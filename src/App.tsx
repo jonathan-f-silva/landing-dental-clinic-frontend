@@ -1,12 +1,25 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "./theme/index.tsx";
-import Home from "./pages/Home.tsx";
+import { VStack } from "@chakra-ui/react";
+import { Outlet, useLoaderData } from "react-router-dom";
+import { Config, getConfig } from "./contexts/configReducer";
+import { useConfigDispatch } from "./contexts/ConfigContext";
+import { useEffect } from "react";
+
+export async function loader() {
+  return getConfig();
+}
 
 function App() {
+  const config = useLoaderData() as Config;
+  const dispatch = useConfigDispatch();
+
+  useEffect(() => {
+    dispatch({ type: "setConfig", payload: config });
+  }, [config, dispatch]);
+
   return (
-    <ChakraProvider theme={theme}>
-      <Home />
-    </ChakraProvider>
+    <VStack direction="column" alignItems="center" spacing={4}>
+      <Outlet />
+    </VStack>
   );
 }
 
