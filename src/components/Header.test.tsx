@@ -2,7 +2,7 @@ import { render, screen } from "../utils/test-utils";
 import Header from "./Header";
 
 test("renders header with correct title", () => {
-  render(<Header title="Clínica Odontológica" />);
+  render(<Header title="Clínica Odontológica" links={[]} />);
   const title = screen.getByText(/Clínica Odontológica/i);
   expect(title).toBeInTheDocument();
 });

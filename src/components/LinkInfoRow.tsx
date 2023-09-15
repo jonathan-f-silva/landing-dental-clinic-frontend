@@ -4,7 +4,7 @@ import { LinkInfo } from "../contexts/configReducer";
 
 type LinkInfoRowProps = {
   link: LinkInfo;
-  handleRemoveLink: (href: string) => void;
+  handleRemoveLink: (href: LinkInfo["href"]) => void;
 };
 
 function LinkInfoRow({ link, handleRemoveLink }: LinkInfoRowProps) {

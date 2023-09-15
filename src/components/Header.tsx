@@ -15,7 +15,7 @@ function Header({ title, links }: Config["header"]) {
     >
       <Heading>{title}</Heading>
       <HStack as="nav" spacing={4}>
-        {links?.map((link) => (
+        {links.map((link) => (
           <RenderedLink key={link.href} href={link.href}>
             {link.description}
           </RenderedLink>
